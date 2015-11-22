@@ -65,8 +65,8 @@ var _              = require('lodash'),
             watch: {
                 livereload: {
                     files: [
-                        'content/themes/needy/assets/css/*.css',
-                        'content/themes/needy/assets/js/*.js',
+                        'content/themes/bolognajs/assets/css/*.css',
+                        'content/themes/bolognajs/assets/js/*.js',
                         'core/built/assets/*.js',
                         'core/client/dist/index.html'
                     ],
