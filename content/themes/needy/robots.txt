@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /ghost/
+Sitemap: http://<your-blog-domain-here>/sitemap.xml
