@@ -14,7 +14,7 @@ body {
 
 }
 
-a {
+a, a:hover, a:visited, a:link  {
   color: rgb(253, 224, 51);
 }
 
@@ -78,7 +78,7 @@ h1.header {
   margin-bottom: 40px;
 }
 
-.evento {
+.event {
   margin-bottom: 40px;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
@@ -94,15 +94,19 @@ h1.header {
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
 }
+
+.title {
+  paddind-top:30px;
+  paddind-top:30px;
+  padding-bottom: 10px;
+  color: rgb(253, 224, 51);
+}
+
 /* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 50px;
-}
-
-#contact{
-  margin-bottom: 50px;
 }
 
 /* Custom page footer */
@@ -128,13 +132,22 @@ h1.header {
   margin-bottom:1em;
 }
 
-/* Customize container */
-@media (min-width: 768px) {
-  .container {
-    max-width: 730px;
-  }
+.list-unstyled i{
+  vertical-align: middle;
+  margin-right: 5px;
 }
 
+.list-unstyled span{
+  vertical-align: middle;
+}
+
+.list-unstyled li{
+  margin-bottom: 10px;
+}
+
+.list-unstyled{
+  padding-left: 15px;
+}
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {

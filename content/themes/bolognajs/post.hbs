@@ -1,37 +1,35 @@
 {{!< default}}
 
 {{#post}}
-    <div class="evento">
-        <h3>{{{title}}}
+    <div class="event">
+        <h3 class="title">{{{title}}}
             <small><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time></small>
         </h3>
-    </div>
-
-    <div class="row">
-        {{content}}
-    </div>
-
-    <div class="row share">
-        <div class="col-md-9">
-            <!--{{#if tags}}<code class="tag">{{tags separator="</code> <code class=\"tag\">"}}</code>{{/if}}-->
-            {{#if tags}}Tagged under: {{tags separator=", "}}{{/if}}
+        <div class="row">
+            {{content}}
         </div>
-        <div class="col-md-1">
-           <p>Share: </p>
-        </div>
-        <div class="col-md-2">
-            <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
-               onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                <i class="fa fa-twitter"></i>
-            </a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-               onclick="window.open(this.href, 'facebook-share', 'width=580,height=296');return false;">
-                <i class="fa fa-facebook"></i>
-            </a>
-            <a href="https://plus.google.com/share?url={{url absolute="true"}}"
-               onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                <i class="fa fa-google-plus-square"></i>
-            </a>
+        <div class="row share">
+            <div class="col-md-9">
+                <!--{{#if tags}}<code class="tag">{{tags separator="</code> <code class=\"tag\">"}}</code>{{/if}}-->
+                {{#if tags}}Tagged under: {{tags separator=", "}}{{/if}}
+            </div>
+            <div class="col-md-1">
+                <p>Share: </p>
+            </div>
+            <div class="col-md-2">
+                <a href="http://twitter.com/share?text={{title}}&url={{url absolute="true"}}"
+                   onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                   onclick="window.open(this.href, 'facebook-share', 'width=580,height=296');return false;">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a href="https://plus.google.com/share?url={{url absolute="true"}}"
+                   onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <i class="fa fa-google-plus-square"></i>
+                </a>
+            </div>
         </div>
     </div>
 {{/post}}

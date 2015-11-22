@@ -1,18 +1,24 @@
 {{!< default}}
-<div class="jumbotron lead">
-    "Javascript is the English of computer languages.<br/>
-    It's impossible to define a robust grammar,<br/>
-    but it's so flexible and easy to say what you want to say"<br/>
-</div>
-<div class="intro">
-    <p>BolognaJS é il gruppo di appassionati di Javascript di Bologna.
-        Ci incontriamo ogni due settimane per parlare di Javascript e di tutto quello che gli ruota attorno:
-        front-end, back-end, microcontrollori e qualsiasi cosa si possa programmare tramite JS.
-    </p>
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <div class="jumbotron lead">
+            "Javascript is the English of computer languages.<br/>
+            It's impossible to define a robust grammar,<br/>
+            but it's so flexible and easy to say what you want to say"<br/>
+        </div>
+        <div class="intro">
+            <p>BolognaJS é il gruppo di appassionati di Javascript di Bologna.
+                Ci incontriamo ogni due settimane per parlare di Javascript e di tutto quello che gli ruota attorno:
+                front-end, back-end, microcontrollori e qualsiasi cosa si possa programmare tramite JS.
+            </p>
+        </div>
+    </div>
 </div>
 
+<h1 class="header">Ultimi Eventi</h1>
+
 {{#foreach posts}}
-    <div class="evento">
+    <div class="event">
         <h3>
             <a href="{{url}}">{{{title}}}</a><br/>
             <small>
