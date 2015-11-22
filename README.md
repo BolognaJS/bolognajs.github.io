@@ -19,6 +19,7 @@ The project is maintained by a non-profit organisation called the **Ghost Founda
 
 
 # Quick Start Install
+Questa repo non contiene il codice effettivo del blog, ma solo il tema "bolognajs" è effettivamente online, il resto serve come copia locale di ghost con database sqllite (online è MySQL)
 
 Make sure you've installed Node.js - We recommend the latest **Node v0.10.x** release.
 
