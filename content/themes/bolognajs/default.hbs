@@ -31,15 +31,21 @@
 
 {{! Everything else gets inserted here }}
 <div class="container">
-    <div class="header clearfix">
-        <nav class="pull-right">
+    <div class="header-nav clearfix row">
+        <button id="menu-button" type="button" class="btn btn-default visible-xs-inline-block pull-right" data-toggle="collapse" data-target="#menu-collapse">
+            <i class="fa fa-bars fa-2x"></i>
+
+        </button>
+        <a href="/">
+            <img src="{{@blog.logo}}"
+                 class="pull-left img-rounded grow"
+                 style="width: 50px; margin-right: 20px;">
+
+            <h3 class="pull-left">{{@blog.title}}</h3>
+        </a>
+        <nav id="menu-collapse" class="pull-right hidden-xs collapsed">
             {{navigation}}
         </nav>
-        <img src="{{@blog.logo}}"
-             class="pull-left img-rounded grow"
-             style="width: 50px; margin-right: 20px;">
-
-        <h3 class="pull-left">{{@blog.title}}</h3>
     </div>
 
     {{{body}}}

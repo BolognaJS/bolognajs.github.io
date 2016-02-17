@@ -82,7 +82,7 @@ h1.header {
   margin-bottom: 40px;
 }
 /* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
+.header-nav,
 .marketing,
 .footer {
   padding-right: 15px;
@@ -90,9 +90,10 @@ h1.header {
 }
 
 /* Custom page header */
-.header {
+.header, .header-nav {
   padding-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 20px;
 }
 
 .title {
@@ -103,10 +104,38 @@ h1.header {
 }
 
 /* Make the masthead heading the same height as the navigation */
-.header h3 {
+.header-nav h3 {
   margin-top: 0;
   margin-bottom: 0;
   line-height: 50px;
+}
+
+.header-nav a h3 {
+  color: #FFFFFF;
+}
+
+#menu-button {
+  margin-top: 4px;
+  color: #333;
+  background: rgb(253, 224, 51);
+}
+
+#menu-button .fa{
+  margin: 0;
+  color: #333;
+}
+
+#menu-collapse.collapse {
+  display: block!important;
+  width:100%;
+  top:100%;
+}
+
+#menu-collapse.collapse li {
+  display: block;
+  padding: 10px 15px;
+  position: relative;
+  float: none;
 }
 
 /* Custom page footer */
@@ -114,6 +143,10 @@ h1.header {
   padding-top: 19px;
   color: #777;
   border-top: 1px solid #e5e5e5;
+}
+
+.followus {
+  margin-top: 50px;
 }
 
 .followus h3 {
@@ -149,16 +182,20 @@ h1.header {
   padding-left: 15px;
 }
 
+.tag-template .followus, .tag-template .intro, .tag-template .jumbotron, .tag-template h2, .tag-template .first {
+  display: none;
+}
+
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   /* Remove the padding we set earlier */
-  .header,
+  .header-nav,
   .footer {
     padding-right: 0;
     padding-left: 0;
   }
   /* Space out the masthead */
-  .header {
+  .header-nav {
     margin-bottom: 30px;
   }
 }

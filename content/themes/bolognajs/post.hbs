@@ -2,8 +2,12 @@
 
 {{#post}}
     <div class="event">
+
+        {{#if featured}}
+            <p>aaaaaaaaaa</p>
+        {{/if}}
         <h3 class="title">{{{title}}}
-            <small><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time></small>
+            <!--<small><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time></small>-->
         </h3>
         <div class="row">
             {{content}}

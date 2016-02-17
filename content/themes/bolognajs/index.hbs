@@ -15,33 +15,52 @@
     </div>
 </div>
 
-<h1 class="header">Ultimi Eventi</h1>
-
 {{#foreach posts}}
-    <div class="event">
-        <h3>
-            <a href="{{url}}">{{{title}}}</a><br/>
-            <small>
-                <time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>
-            </small>
-        </h3>
+    {{#if @first}}
+        <div class="evento first">
+            <div class="row">
+                <div class="col-md-12">
+                <h1>
+                    <a href="{{url}}">{{{title}}}</a><br/>
+                    <!--<small>-->
+                        <!--<time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>-->
+                    <!--</small>-->
+                </h1>
+            </div>
 
-        <div class="row">
-            <div class="col-md-12">
-                {{excerpt}}
+            {{content}}
+        </div>
+    {{/if}}
+{{/foreach}}
+<br/>
+<h2 class="header">Ultimi Eventi</h2>
+{{#foreach posts}}
+    {{#unless @first}}
+        <div class="evento">
+            <h3>
+                <a href="{{url}}">{{{title}}}</a><br/>
+                <!--<small>-->
+                    <!--<time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time>-->
+                <!--</small>-->
+            </h3>
+
+            <div class="row">
+                <div class="col-md-12">
+                    {{excerpt}}
+                </div>
             </div>
         </div>
-    </div>
+    {{/unless}}
 {{/foreach}}
 
-<div class="row">
-    <div class="col-md-12">
-        {{!! After all the posts, we have the previous/next pagination links }}
-        <div class="pull-right">
-            {{pagination}}
-        </div>
-    </div>
-</div>
+<!--<div class="row">-->
+    <!--<div class="col-md-12">-->
+        <!--{{!! After all the posts, we have the previous/next pagination links }}-->
+        <!--<div class="pull-right">-->
+            <!--{{pagination}}-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
 
 <div class="row followus">
     <div class="col-lg-3">
