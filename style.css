@@ -8,6 +8,16 @@ body {
     background: #f3df49;
 }
 
+a {
+    color: #333;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
 header h1 {
     width: 20em;
     height: 20em;
