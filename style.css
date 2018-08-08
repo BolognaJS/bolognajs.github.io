@@ -1,3 +1,7 @@
+:root {
+    --main-color: #f3df49;
+}
+
 /**
  * Minified by jsDelivr using clean-css v4.1.11.
  * Original file: /npm/modern-normalize@0.5.0/modern-normalize.css
@@ -142,6 +146,10 @@ summary {
     white-space: nowrap; /* 1 */
 }
 
+.hide-content {
+    text-indent: -9999px;
+}
+
 /**
   Commons
 **/
@@ -174,15 +182,19 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f3df49;
+    background: var(--main-color) url(img/big-logo.svg) no-repeat;
+    background-position: calc(100vw - 1160px + 30px) 90%;
+    background-size: 1160px;
+
     text-align: center;
+    margin-bottom: 5rem;
 }
 
 .header__title {
     width: 179px;
     height: 179px;
 
-    background: url(img/logo.svg) no-repeat center center;
+    background: url(img/header-logo.svg) no-repeat center center;
     background-size: contain;
 }
 
@@ -195,13 +207,14 @@ header {
 
 .header__subintro {
     max-width: 640px;
-    margin: 0 0 5rem;
+    margin: 0 0 4rem;
     font-size: 2rem;
 }
 
 .follow-us {
     font-size: 2rem;
     text-align: center;
+    margin-bottom: 5rem;
 }
 
 .follow-us__slack-counter {
@@ -210,10 +223,131 @@ header {
 
 .follow-us__socials {
     display: flex;
-    margin: 0;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin: 0 auto;
     padding: 0;
 }
 .follow-us__socials li {
+    background: transparent no-repeat center center;
+    background-size: contain;
     list-style: none;
     margin: 0;
+    width: 100px;
+    height: 100px;
+    /* background: red; */
+}
+
+.follow-us__socials li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+li.follow-us__socials--slack {
+    background-image: url(img/social-slack.svg);
+    width: 60px;
+    height: 60px;
+}
+
+li.follow-us__socials--meetup {
+    background-image: url(img/social-meetup.svg);
+    width: 81px;
+    height: 77px;
+}
+
+li.follow-us__socials--twitter {
+    background-image: url(img/social-twitter.svg);
+    width: 60px;
+    height: 60px;
+}
+
+li.follow-us__socials--facebook {
+    background-image: url(img/social-facebook.svg);
+    width: 55px;
+    height: 55px;
+}
+
+li.follow-us__socials--github {
+    background-image: url(img/social-github.svg);
+    width: 60px;
+    height: 60px;
+}
+
+/**
+    Events
+**/
+
+.events {
+    text-align: center;
+}
+
+.events__intro {
+    font-size: 3rem;
+    line-height: 4rem;
+    width: 70vw;
+    margin: 0 auto;
+    margin-bottom: 3rem;
+}
+
+.events__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 1.5rem;
+    width: 996px;
+    margin: 0 auto;
+}
+
+.events_title {
+    display: inline-block;
+    font-size: 4rem;
+    padding: 0.1rem 1rem;
+    background-color: var(--main-color);
+}
+
+.events__event {
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+    width: 312px;
+    height: 312px;
+    font-size: 2rem;
+    text-align: left;
+    padding: 2rem;
+    margin: 10px;
+    background: #f7f7f7;
+}
+
+.events__event h3 {
+    margin: 0;
+    /* padding: 0; */
+    flex-grow: 1;
+}
+
+.events__event-date {
+    margin-bottom: 1rem;
+}
+
+.vents__event-author {
+}
+
+.events__event--next {
+    color: white;
+    background-color: #ec1c40;
+    background-image: url(img/event-next.svg);
+    background-position: 130% 120%;
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
+footer {
+    background-color: #ebebeb;
+    font-size: 2rem;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+footer a {
+    font-weight: 700;
 }
