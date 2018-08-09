@@ -1,152 +1,225 @@
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<title>Bologna JS</title>
-		<meta name="description"
-          content="Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni. Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno: frontend, backend, hardware e tanto altro.">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta property="og:title" content="Bologna JS">
-		<meta property="og:description"
-          content="Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni. Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno: frontend, backend, hardware e tanto altro.">
-		<meta property="og:image" content="">
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-        <link rel="manifest" href="/manifest.json">
-        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
-        <meta name="theme-color" content="#ffffff">
-        <link rel=stylesheet href="style.css" type="text/css">
 
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119102167-1"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
-			gtag('js', new Date());
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Bologna JS</title>
+	<meta name="description" content="Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni. Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno: frontend, backend, hardware e tanto altro.">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Bologna JS">
+	<meta property="og:description" content="Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni. Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno: frontend, backend, hardware e tanto altro.">
+	<meta property="og:image" content="">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/manifest.json">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="theme-color" content="#ffffff">
 
-			gtag('config', 'UA-119102167-1');
-		</script>
-	</head>
-	<body>
-		<div class="wrapper">
-			<header>
-        <h1><span class="visuallyhidden">Bologna JS</span></h1>
-			</header>
-			<main>
-				<div class="follow-us ">
-					<p>
-							Vieni a chattare con noi su <a href="http://bolognajs.herokuapp.com/" target="_blank">Slack <img src="https://bolognajs.herokuapp.com/badge.svg" alt="Slack"/></a> o seguici su <a
-							href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/" target="_blank">Meetup</a>.
-					</p>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+	<link rel=stylesheet href="style.css" type="text/css">
 
-				</div>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119102167-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-				<h2>Chi siamo</h2>
+		gtag('config', 'UA-119102167-1');
+	</script>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header>
+			<h1 class="header__title">
+				<span class="visuallyhidden">Bologna JS</span>
+			</h1>
+			<p class="header__intro">Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni</p>
+			<p class="header__subintro">Siamo una community molto numerosa e molto attiva sul canale Slack composta da professionisti e studenti</p>
+		</header>
+		<main>
+			<div class="follow-us">
 				<p>
-					Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni.
-					Siamo una community molto numerosa e molto attiva sul canale Slack
-					composta da professionisti e studenti.
+					Vieni a chattare con noi su
+					<a href="http://bolognajs.herokuapp.com/" target="_blank">
+						<strong>Slack</strong>
+						<img class="follow-us__slack-counter" src="https://bolognajs.herokuapp.com/badge.svg" alt="Slack" />
+					</a> o seguici su
+					<a href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/" target="_blank">
+						<strong>Meetup</strong>
+					</a>
 				</p>
 
-				<h2>Cosa facciamo</h2>
-				<p>
+				<ul class="follow-us__socials">
+					<li class="follow-us__socials--slack">
+						<a class="hide-content" href="http://bolognajs.herokuapp.com/">Slack</a>
+					</li>
+					<li class="follow-us__socials--meetup">
+						<a class="hide-content" href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/">MeetUp</a>
+					</li>
+					<li class="follow-us__socials--twitter">
+						<a class="hide-content" href="https://twitter.com/bolognajs">Twitter</a>
+					</li>
+					<li class="follow-us__socials--facebook">
+						<a class="hide-content" href="https://facebook.com/bolognajs">Facebook</a>
+					</li>
+					<li class="follow-us__socials--github">
+						<a class="hide-content" href="https://github.com/BolognaJS">GitHub</a>
+					</li>
+				</ul>
+
+			</div>
+
+
+			<section class="events">
+
+				<p class="events__intro">
 					Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno:
-					frontend, backend, hardware e tanto altro.
+					<br>frontend, backend, hardware e tanto altro.
 				</p>
 
-				<h2>I nostri eventi</h2>
-                               <div class="event">
-                                        <div class="date">17 Luglio 2018</div>
-                                        <h3>Hands-on session: Serverless - Build e deploy di un’applicazione node.js su AWS</h3>
-                                        <h4>by Davide Fiorello</h4>
-                                        <div class="description"></div>
-                                </div>
-				<div class="event">
-					<div class="date">25 Giugno 2018</div>
-					<h3>Hands-on session: React & TypeScript</h3>
-					<h4>by Alessandro Garzaro & Francesco Bedussi</h4>
-					<div class="description"></div>
+				<h2 class="events_title">I nostri eventi</h2>
+				<div class="events__grid">
+
+					<article class="events__event events__event--next">
+						<div class="events__event-date">17 Luglio 2018</div>
+						<h3>Hands-on session: Serverless - Build e deploy di un’applicazione node.js su AWS</h3>
+						<span class="events__event-author">by Davide Fiorello</h4>
+					</article>
+
+					<article class="events__event">
+						<div class="events__event-date">17 Luglio 2018</div>
+						<h3>Hands-on session: Serverless - Build e deploy di un’applicazione node.js su AWS</h3>
+						<span class="events__event-author">by Davide Fiorello</span>
+					</article>
+
+					<article class="events__event">
+						<div class="events__event-date">25 Giugno 2018</div>
+						<h3>Hands-on session: React &amp; TypeScript</h3>
+						<span class="events__event-author">by Alessandro Garzaro &amp; Francesco Bedussi</span>
+					</article>
+
+					<article class="events__event">
+						<div class="events__event-date">23 Maggio 2018</div>
+						<div class="events__content">
+							<h3>Atomic UI &amp; Storybook</h3>
+							<span class="events__event-author">by Gabriele Mantovani</span>
+						</div>
+						<div class="events__content">
+							<h3>Css Love JS</h3>
+							<span class="events__event-author">by Vincenzo Innocenti Sedili</span>
+						</div>
+					</article>
+					<article class="events__event">
+						<div class="events__event-date">18 Aprile 2018</div>
+						<h3>Web Components: from zero to hero</h3>
+						<span class="events__event-author">by Salvatore Laisa &amp; Alessio Occhipinti</span>
+
+					</article>
+
+					<article class="events__event events__event--double">
+						<div class="events__event-date">21 Marzo 2018</div>
+						<div class="events__content">
+							<h3>Vue.js, un'alternativa dinamica a JQuery</h3>
+							<span class="events__event-author">by Filippo Nardi e Edo Gargano</span>
+						</div>
+						<div class="events__content">
+							<h3>Risiko ReactJS: strategie d’invasione. Come proporre un'architettura headless basata su React JS in una grande azienda.</h3>
+							<span class="events__event-author">by Giorgio Borelli</span>
+						</div>
+					</article>
+					<article class="events__event">
+						<div class="events__event-date">21 Febbraio 2018</div>
+						<div class="events__content">
+							<h3>Pillole di JS</h3>
+							<span class="events__event-author">by Francesco Bedussi</span>
+						</div>
+						<div class="events__content">
+							<h3>ES6 e Service Worker per lanciare un’applicazione web senza un bundler</h3>
+							<span class="events__event-author">by Edoardo Cavazza</span>
+						</div>
+
+					</article>
+					<article class="events__event">
+						<div class="events__event-date">24 Gennaio 2018</div>
+
+						<div class="events__content">
+							<h3>ES2015 class: Oltre lo zucchero sintattico.</h3>
+							<span class="events__event-author">by Bruno Scopelliti</span>
+						</div>
+						<div class="events__content">
+							<h3>Building Resilient Microservice APIs with REST and API Gatewa</h3>
+							<span class="events__event-author">by Vincenzo Chianese</span>
+						</div>
+
+					</article>
+					<article class="events__event">
+						<div class="events__event-date">29 Novembre 2017</div>
+						<div class="events__content">
+							<h3>Node + React = GatsbyJS</h3>
+							<span class="events__event-author">by Giorgio Aquino</span>
+						</div>
+						<div class="events__content">
+							<h3>GraphQL, introduzione pratica</h3>
+							<span class="events__event-author">by Davide Fiorello</span>
+						</div>
+
+					</article>
+					<article class="events__event events__event--double">
+						<div class="events__event-date">8 Novembre 2017</div>
+						<div class="events__content">
+							<h3>ES6: Intro to destructuring</h3>
+							<span class="events__event-author">by Giorgio Aquino</span>
+						</div>
+						<div class="events__content">
+							<h3>What is `this`?</h3>
+							<span class="events__event-author">by Francesco Bedussi</span>
+						</div>
+						<div class="events__content">
+							<h3>When `not` to use arrow functions</h3>
+							<span class="events__event-author">by Marco Patierno</span>
+						</div>
+						<div class="events__content">
+							<h3>Create objects in JavaScript</h3>
+							<span class="events__event-author">by Vincenzo Innocenti</span>
+						</div>
+					</article>
+					<article class="events__event">
+						<div class="events__event-date">30 Agosto 2017</div>
+						<h3>Hands-on session: JS &amp; Functional Programming</h3>
+						<span class="events__event-author">by Davide Fiorello</span>
+					</article>
+					<article class="events__event">
+						<div class="events__event-date">02 Agosto 2017</div>
+						<h3>Hands-on session: Jest</h3>
+						<span class="events__event-author">by Davide Fiorello</span>
+					</article>
+					<article class="events__event">
+						<div class="events__event-date">04 Luglio 2017</div>
+						<h3>Hands-on session: Redux</h3>
+						<span class="events__event-author">by Davide Fiorello</span>
+					</article>
+					<article class="events__event">
+						<div class="events__event-date">13 Giugno 2017</div>
+						<h3>Hands-on session: React</h3>
+						<span class="events__event-author">by Davide Fiorello</span>
+					</article>
 				</div>
-				<div class="event">
-					<div class="date">23 Maggio 2018</div>
-					<h3>Atomic UI & Storybook</h3>
-					<h4>by Gabriele Mantovani</h4>
-					<h3>Css Love JS</h3>
-					<h4>by Vincenzo Innocenti Sedili</h4>
-					<div class="description"></div>
-				</div>
-				<div class="event">
-					<div class="date">18 Aprile 2018</div>
-					<h3>Web Components: from zero to hero</h3>
-					<h4>by Salvatore Laisa & Alessio Occhipinti</h4>
-					<div class="description"></div>
-				</div>
-				<div class="event">
-					<div class="date">21 Marzo 2018</div>
-					<h3>Vue.js, un'alternativa dinamica a JQuery</h3>
-					<h4>by Filippo Nardi e Edo Gargano</h4>
-					<h3>Risiko ReactJS: strategie d’invasione. Come proporre un'architettura headless basata su React JS in una grande azienda.</h3>
-					<h4>by Giorgio Borelli</h4>
-					<div class="description"></div>
-				</div>
-				<div class="event">
-					<div class="date">21 Febbraio 2018</div>
-					<h3>Pillole di JS</h3>
-					<h4>by Francesco Bedussi</h4>
-					<h3>ES6 e Service Worker per lanciare un’applicazione web senza un bundler</h3>
-					<h4>by Edoardo Cavazza</h4>
-					<div class="description"></div>
-				</div>
-				<div class="event">
-					<div class="date">24 Gennaio 2018</div>
-					<h3>ES2015 class: Oltre lo zucchero sintattico.</h3>
-					<h4>by Bruno Scopelliti</h4>
-					<h3>Building Resilient Microservice APIs with REST and API Gatewa</h3>
-					<h4>by Vincenzo Chianese</h4>
-					<div class="description"></div>
-				</div>
-				<div class="event">
-					<div class="date">29 Novembre 2017</div>
-					<h3>Node + React = GatsbyJS</h3>
-					<h4>by Giorgio Aquino</h4>
-					<h3>GraphQL, introduzione pratica</h3>
-					<h4>by Davide Fiorello</h4>
-					<div class="description"></div>
-				</div>
-				<div class="event">
-					<div class="date">8 Novembre 2017</div>
-					<h3>ES6: Intro to destructuring</h3>
-					<h4>by Giorgio Aquino</h4>
-					<h3>What is `this`?</h3>
-					<h4>by Francesco Bedussi</h4>
-					<h3>When `not` to use arrow functions</h3>
-					<h4>by Marco Patierno</h4>
-					<h3>Create objects in JavaScript</h3>
-					<h4>by Vincenzo Innocenti</h4>
-				</div>
-				<div class="event">
-					<div class="date">30 Agosto 2017</div>
-					<h3>Hands-on session: JS & Functional Programming</h3>
-					<h4>by Davide Fiorello</h4>
-				</div>
-				<div class="event">
-					<div class="date">02 Agosto 2017</div>
-					<h3>Hands-on session: Jest</h3>
-					<h4>by Davide Fiorello</h4>
-				</div>
-				<div class="event">
-					<div class="date">04 Luglio 2017</div>
-					<h3>Hands-on session: Redux</h3>
-					<h4>by Davide Fiorello</h4>
-				</div>
-				<div class="event">
-					<div class="date">13 Giugno 2017</div>
-					<h3>Hands-on session: React</h3>
-					<h4>by Davide Fiorello</h4>
-				</div>
-			</main>
-		</div>
-	</body>
+			</section>
+		</main>
+		<footer>
+			seguici su
+			<a href="http://bolognajs.herokuapp.com/">Slack</a>
+			<a href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/">MeetUp</a>
+			<a href="https://twitter.com/bolognajs">Twitter</a>
+			<a href="https://facebook.com/bolognajs">Facebook</a>
+			<a href="https://github.com/BolognaJS">GitHub</a>
+
+		</footer>
+	</div>
+</body>
+
 </html>
