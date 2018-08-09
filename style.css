@@ -297,6 +297,7 @@ li.follow-us__socials--github {
     margin: 1.5rem;
     width: 996px;
     margin: 0 auto;
+    margin-bottom: 5rem;
 }
 
 .events_title {
@@ -341,6 +342,15 @@ li.follow-us__socials--github {
     background-size: 80%;
 }
 
+.events__event--double {
+    width: 644px;
+    justify-content: space-evenly;
+}
+
+.events__content {
+    flex-grow: 1;
+}
+
 footer {
     background-color: #ebebeb;
     font-size: 2rem;
@@ -369,6 +379,9 @@ footer a {
         margin-left: 2rem;
     }
 
+    .follow-us {
+        padding: 0 2rem;
+    }
     .follow-us__socials {
         width: 100%;
         padding: 0 10px;
