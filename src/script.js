@@ -1,9 +1,3 @@
-{/* <article class="events__event events__event--next"> or --double
-    <div class="events__event-date">17 Luglio 2018</div>
-    <h3>Hands-on session: Serverless - Build e deploy di un’applicazione node.js su AWS</h3>
-    <span class="events__event-author">by Davide Fiorello</h4>
-</article> */}
-
 function createArticleNode(type=[], talks) {
     type = Array.isArray(type) ? type : [type];
     type = [...type]
