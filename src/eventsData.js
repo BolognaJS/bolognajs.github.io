@@ -9,8 +9,8 @@
  * @todo
  */
 
-define(function () {
-    return [
+module.exports = {
+    "events": [
         {
             "date": "",
             "type": ["next", "placeholder"],
@@ -33,7 +33,7 @@ define(function () {
         },
         {
             "date": "25 giugno 2018",
-            "type": "hands-on",
+            "type": ["hands-on"],
             "talks": [
                 {
                     "title": "Hands-on session: React & TypeScript",
@@ -65,7 +65,7 @@ define(function () {
         },
         {
             "date": "21 marzo 2018",
-            "type": "double",
+            "type": [["double"]],
             "talks": [
                 {
                     "title": "Vue.js, un'alternativa dinamica a JQuery",
@@ -118,7 +118,7 @@ define(function () {
         },
         {
             "date": "8 Novembre 2017",
-            "type": "double",
+            "type": ["double"],
             "talks": [
                 {
                     "title": "ES6: Intro to destructuring",
@@ -140,7 +140,7 @@ define(function () {
         },
         {
             "date": "30 Agosto 2017",
-            "type": "hands-on",
+            "type": ["hands-on"],
             "talks": [
                 {
                     "title": "Hands-on session: JS & Functional Programming",
@@ -150,7 +150,7 @@ define(function () {
         },
         {
             "date": "02 Agosto 2017",
-            "type": "hands-on",
+            "type": ["hands-on"],
             "talks": [
                 {
                     "title": "Hands-on session: Jest",
@@ -160,7 +160,7 @@ define(function () {
         },
         {
             "date": "04 Luglio 2017",
-            "type": "hands-on",
+            "type": ["hands-on"],
             "talks": [
                 {
                     "title": "Hands-on session: Redux",
@@ -170,7 +170,7 @@ define(function () {
         },
         {
             "date": "13 Giugno 2017",
-            "type": "hands-on",
+            "type": ["hands-on"],
             "talks": [
                 {
                     "title": "Hands-on session: React",
@@ -179,4 +179,4 @@ define(function () {
             ]
         }
     ]
-});
+};

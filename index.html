@@ -2,102 +2,306 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Bologna JS</title>
-	<meta name="description" content="Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni. Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno: frontend, backend, hardware e tanto altro.">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta property="og:title" content="Bologna JS">
-	<meta property="og:description" content="Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni. Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno: frontend, backend, hardware e tanto altro.">
-	<meta property="og:image" content="">
-	<link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-	<link rel="manifest" href="/manifest.json">
-	<link rel="mask-icon" href="img/svg/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="theme-color" content="#ffffff">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Bologna JS</title>
+    <meta name="description" content="Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni. Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno: frontend, backend, hardware e tanto altro.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta property="og:title" content="Bologna JS">
+    <meta property="og:description" content="Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni. Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno: frontend, backend, hardware e tanto altro.">
+    <meta property="og:image" content="">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="mask-icon" href="img/svg/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
 
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-	<link rel=stylesheet href="src/style.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
+    <link rel=stylesheet href="src/style.css" type="text/css">
 
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-119102167-1"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119102167-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
 
-		gtag('config', 'UA-119102167-1');
-	</script>
+        gtag('config', 'UA-119102167-1');
+    </script>
 </head>
 
 <body>
-	<div class="wrapper">
-		<header>
-			<h1 class="header__title">
-				<span class="visuallyhidden">Bologna JS</span>
-			</h1>
-			<p class="header__intro">Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni</p>
-			<p class="header__subintro">Siamo una community molto numerosa e molto attiva sul canale Slack composta da professionisti e studenti</p>
-		</header>
-		<main>
-			<div class="follow-us">
-				<p>
-					Vieni a chattare con noi su
-					<a href="http://bolognajs.herokuapp.com/" target="_blank">
-						<strong>Slack</strong>
-						<img class="follow-us__slack-counter" src="https://bolognajs.herokuapp.com/badge.svg" alt="Slack" />
-					</a> o seguici su
-					<a href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/" target="_blank">
-						<strong>Meetup</strong>
-					</a>
-				</p>
+    <div class="wrapper">
+        <header>
+            <h1 class="header__title">
+                <span class="visuallyhidden">Bologna JS</span>
+            </h1>
+            <p class="header__intro">Bologna JS é il gruppo di appassionati di Javascript di Bologna e dintorni</p>
+            <p class="header__subintro">Siamo una community molto numerosa e molto attiva sul canale Slack composta da professionisti e studenti</p>
+        </header>
+        <main>
+            <div class="follow-us">
+                <p>
+                    Vieni a chattare con noi su
+                    <a href="http://bolognajs.herokuapp.com/" target="_blank">
+                        <strong>Slack</strong>
+                        <img class="follow-us__slack-counter" src="https://bolognajs.herokuapp.com/badge.svg" alt="Slack" />
+                    </a> o seguici su
+                    <a href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/" target="_blank">
+                        <strong>Meetup</strong>
+                    </a>
+                </p>
 
-				<ul class="follow-us__socials">
-					<li class="follow-us__socials--slack">
-						<a class="hide-content" href="http://bolognajs.herokuapp.com/">Slack</a>
-					</li>
-					<li class="follow-us__socials--meetup">
-						<a class="hide-content" href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/">MeetUp</a>
-					</li>
-					<li class="follow-us__socials--twitter">
-						<a class="hide-content" href="https://twitter.com/bolognajs">Twitter</a>
-					</li>
-					<li class="follow-us__socials--facebook">
-						<a class="hide-content" href="https://facebook.com/bolognajs">Facebook</a>
-					</li>
-					<li class="follow-us__socials--github">
-						<a class="hide-content" href="https://github.com/BolognaJS">GitHub</a>
-					</li>
-				</ul>
+                <ul class="follow-us__socials">
+                    <li class="follow-us__socials--slack">
+                        <a class="hide-content" href="http://bolognajs.herokuapp.com/">Slack</a>
+                    </li>
+                    <li class="follow-us__socials--meetup">
+                        <a class="hide-content" href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/">MeetUp</a>
+                    </li>
+                    <li class="follow-us__socials--twitter">
+                        <a class="hide-content" href="https://twitter.com/bolognajs">Twitter</a>
+                    </li>
+                    <li class="follow-us__socials--facebook">
+                        <a class="hide-content" href="https://facebook.com/bolognajs">Facebook</a>
+                    </li>
+                    <li class="follow-us__socials--github">
+                        <a class="hide-content" href="https://github.com/BolognaJS">GitHub</a>
+                    </li>
+                </ul>
 
-			</div>
+            </div>
 
 
-			<section class="events">
+            <section class="events">
 
-				<p class="events__intro">
-					Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno:
-					<br>frontend, backend, hardware e tanto altro.
-				</p>
+                <p class="events__intro">
+                    Ogni mese organizziamo talk e aperitivi a tema JS e tutto quello che gli gira intorno:
+                    <br>frontend, backend, hardware e tanto altro.
+                </p>
 
-				<h2 class="events_title">I nostri eventi</h2>
-				<div class="events__grid">
-					<!-- Injected articles -->
-				</div>
-			</section>
-		</main>
-		<footer>
-			seguici su
-			<a href="http://bolognajs.herokuapp.com/">Slack</a>
-			<a href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/">MeetUp</a>
-			<a href="https://twitter.com/bolognajs">Twitter</a>
-			<a href="https://facebook.com/bolognajs">Facebook</a>
-			<a href="https://github.com/BolognaJS">GitHub</a>
+                <h2 class="events_title">I nostri eventi</h2>
+                <div class="events__grid">
+                        <article class="events__event  events__event--next events__event--placeholder ">
+                            <div class="events__event-date"></div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Stiamo organizzando il prossimo evento. Stay tuned</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author"> </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event  events__event--hands-on ">
+                            <div class="events__event-date">17 luglio 2018</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Hands-on session: Serverless - Build e deploy di un’applicazione node.js su AWS</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Davide Fiorello </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event  events__event--hands-on ">
+                            <div class="events__event-date">25 giugno 2018</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Hands-on session: React &amp; TypeScript</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Alessandro Garzaro </span>
+                                                        <span class="events__event-author">Francesco Bedussi </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event events__event--multiple ">
+                            <div class="events__event-date">23 maggio 2018</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Atomic UI &amp; Storybook</h3>
+                                        <span class="events__event-author">by
+                                                    <a class="events__event-author" href="https://twitter.com/mantovanig_it">Gabriele Mantovani </a>
+                                        </span>
+                                    </div>
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Css Love JS</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Vincenzo Innocenti Sedili </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event  ">
+                            <div class="events__event-date">18 aprile 2018</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Web Components: from zero to hero</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Salvatore Laisa </span>
+                                                        <span class="events__event-author">Alessio Occhipinti </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event events__event--multiple events__event--double ">
+                            <div class="events__event-date">21 marzo 2018</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Vue.js, un&#x27;alternativa dinamica a JQuery</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Filippo Nardi </span>
+                                                        <span class="events__event-author">Edo Gargano </span>
+                                        </span>
+                                    </div>
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Risiko ReactJS: strategie d’invasione. Come proporre un&#x27;architettura headless basata su React JS in una grande azienda.</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Giorgio Borelli </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event events__event--multiple ">
+                            <div class="events__event-date">21 febbraio 2018</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Pillole di JS</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Francesco Bedussi </span>
+                                        </span>
+                                    </div>
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">ES6 e Service Worker per lanciare un’applicazione web senza un bundler</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Edoardo Cavazza </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event events__event--multiple ">
+                            <div class="events__event-date">24 Gennaio 2018</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">ES2015 class: Oltre lo zucchero sintattico.</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Bruno Scopelliti </span>
+                                        </span>
+                                    </div>
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Building Resilient Microservice APIs with REST and API Gateway</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Vincenzo Chianese </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event events__event--multiple ">
+                            <div class="events__event-date">29 novembre 2018</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Node + React &#x3D; GatsbyJS</h3>
+                                        <span class="events__event-author">by
+                                                    <a class="events__event-author" href="https://twitter.com/g100g">Giorgio Aquino </a>
+                                        </span>
+                                    </div>
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">GraphQL, introduzione pratica</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Davide Fiorello </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event events__event--multiple events__event--double ">
+                            <div class="events__event-date">8 Novembre 2017</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">ES6: Intro to destructuring</h3>
+                                        <span class="events__event-author">by
+                                                    <a class="events__event-author" href="https://twitter.com/g100g">Giorgio Aquino </a>
+                                        </span>
+                                    </div>
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">What is &#x60;this&#x60;?</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Francesco Bedussi </span>
+                                        </span>
+                                    </div>
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">When &#x60;not&#x60; use arrow functions</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Marco Patierno </span>
+                                        </span>
+                                    </div>
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Create objects in JavaScript</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Vincenzo Innocenti Sedili </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event  events__event--hands-on ">
+                            <div class="events__event-date">30 Agosto 2017</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Hands-on session: JS &amp; Functional Programming</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Davide Fiorello </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event  events__event--hands-on ">
+                            <div class="events__event-date">02 Agosto 2017</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Hands-on session: Jest</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Davide Fiorello </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event  events__event--hands-on ">
+                            <div class="events__event-date">04 Luglio 2017</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Hands-on session: Redux</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Davide Fiorello </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
+                        <article class="events__event  events__event--hands-on ">
+                            <div class="events__event-date">13 Giugno 2017</div>
+                            <div class="events__content">
+                                    <div class="events__content__talk">
+                                        <h3 class="events__event-title">Hands-on session: React</h3>
+                                        <span class="events__event-author">by
+                                                        <span class="events__event-author">Davide Fiorello </span>
+                                        </span>
+                                    </div>
+                            </div>
+                        </article>
 
-		</footer>
-	</div>
-	<script data-main="src/script.js" src="src/require.js"></script>
+                </div>
+            </section>
+        </main>
+        <footer>
+            seguici su
+            <a href="http://bolognajs.herokuapp.com/">Slack</a>
+            <a href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/">MeetUp</a>
+            <a href="https://twitter.com/bolognajs">Twitter</a>
+            <a href="https://facebook.com/bolognajs">Facebook</a>
+            <a href="https://github.com/BolognaJS">GitHub</a>
+
+        </footer>
+    </div>
 </body>
 
 </html>

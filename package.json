@@ -6,6 +6,13 @@
     "main": "index",
     "scripts": {
         "start": "node index",
+        "handle": "node ./node_modules/.bin/handlebars ./src/template/index.hbs -f ./test.html",
         "test": "grunt validate --verbose"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "gulp": "^3.9.1",
+        "gulp-compile-handlebars": "^0.6.1",
+        "gulp-rename": "^1.4.0"
     }
 }

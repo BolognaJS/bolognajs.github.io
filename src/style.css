@@ -292,8 +292,12 @@ li.follow-us__socials--github {
 }
 
 .events__grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    height: 100%;
+    grid-auto-flow: dense;
+    grid-template-columns: 332px 332px 332px;
+    grid-auto-rows: 332px;
+    grid-gap: 1px 1px;
     margin: 1.5rem;
     width: 996px;
     margin: 0 auto;
@@ -310,8 +314,6 @@ li.follow-us__socials--github {
 .events__event {
     display: flex;
     flex-direction: column;
-    width: 312px;
-    height: 312px;
     font-size: 2rem;
     text-align: left;
     padding: 2rem;
@@ -343,7 +345,8 @@ li.follow-us__socials--github {
 }
 
 .events__event--double {
-    width: 644px;
+    grid-column-start: 1;
+    grid-column-end: 3;
     justify-content: space-evenly;
 }
 
@@ -385,6 +388,7 @@ footer a {
 
 @media screen and (max-width: 1023px) {
     .events__grid {
+        grid-template-columns: 332px 332px;
         width: 664px;
     }
 }
@@ -417,11 +421,18 @@ footer a {
 
     .events__grid {
         width: 100%;
+        grid-template-columns: 100%;
+        grid-auto-rows: auto;
         padding: 0 10px;
     }
 
+    .events__event--double {
+        grid-column-start: 1;
+        grid-column-end: 2;
+        justify-content: space-evenly;
+    }
+
     .events__event {
-        width: 100%;
-        height: auto;
+        min-height: 332px;
     }
 }
