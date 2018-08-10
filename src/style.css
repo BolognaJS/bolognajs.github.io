@@ -182,7 +182,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: var(--main-color) url(img/big-logo.svg) no-repeat;
+    background: var(--main-color) url(../img/svg/big-logo.svg) no-repeat;
     background-position: calc(100vw - 1160px + 30px) 90%;
     background-size: 1160px;
 
@@ -194,7 +194,7 @@ header {
     width: 179px;
     height: 179px;
 
-    background: url(img/header-logo.svg) no-repeat center center;
+    background: url(../img/svg/header-logo.svg) no-repeat center center;
     background-size: contain;
 }
 
@@ -246,31 +246,31 @@ header {
 }
 
 li.follow-us__socials--slack {
-    background-image: url(img/social-slack.svg);
+    background-image: url(../img/svg/social-slack.svg);
     width: 60px;
     height: 60px;
 }
 
 li.follow-us__socials--meetup {
-    background-image: url(img/social-meetup.svg);
+    background-image: url(../img/svg/social-meetup.svg);
     width: 81px;
     height: 77px;
 }
 
 li.follow-us__socials--twitter {
-    background-image: url(img/social-twitter.svg);
+    background-image: url(../img/svg/social-twitter.svg);
     width: 60px;
     height: 60px;
 }
 
 li.follow-us__socials--facebook {
-    background-image: url(img/social-facebook.svg);
+    background-image: url(../img/svg/social-facebook.svg);
     width: 55px;
     height: 55px;
 }
 
 li.follow-us__socials--github {
-    background-image: url(img/social-github.svg);
+    background-image: url(../img/svg/social-github.svg);
     width: 60px;
     height: 60px;
 }
@@ -308,7 +308,6 @@ li.follow-us__socials--github {
 }
 
 .events__event {
-    justify-content: space-around;
     display: flex;
     flex-direction: column;
     width: 312px;
@@ -322,7 +321,6 @@ li.follow-us__socials--github {
 
 .events__event h3 {
     margin: 0;
-    /* padding: 0; */
     flex-grow: 1;
 }
 
@@ -330,13 +328,15 @@ li.follow-us__socials--github {
     margin-bottom: 1rem;
 }
 
-.vents__event-author {
+.events__event--placeholder .events__event-author,
+.events__event--placeholder .events__event-date {
+    display: none;
 }
 
 .events__event--next {
     color: white;
     background-color: #ec1c40;
-    background-image: url(img/event-next.svg);
+    background-image: url(../img/svg/event-next.svg);
     background-position: 130% 120%;
     background-repeat: no-repeat;
     background-size: 80%;
@@ -347,8 +347,29 @@ li.follow-us__socials--github {
     justify-content: space-evenly;
 }
 
+.events__event-author a {
+    text-decoration: underline;
+}
+
 .events__content {
     flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.events__event--multiple .events__content {
+    justify-content: space-around;
+}
+
+.events__content__talk {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: space-around;
+}
+
+.events__event--multiple .events__content__talk {
+    flex-grow: initial;
 }
 
 footer {

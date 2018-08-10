@@ -3,7 +3,7 @@
     "version": "2.0.0",
     "description": "Comunity Javascript di Bologna.",
     "author": "the Bologna JS web team",
-    "main": "./core/index",
+    "main": "index",
     "scripts": {
         "start": "node index",
         "test": "grunt validate --verbose"
