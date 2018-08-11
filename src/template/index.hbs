@@ -82,6 +82,11 @@
                 </p>
 
                 <h2 class="events_title">I nostri eventi</h2>
+                <div class="events__grid events__grid--placeholders">
+                    {{#each events}}
+                        <div class="events__event" aria-hidden="true"></div>
+                    {{/each}}
+                </div>
                 <div class="events__grid">
                     {{#each events}}
                         <article class="events__event {{#greaterThan this.talks.length 1}}events__event--multiple{{/greaterThan}} {{#each this.type}}events__event--{{this}} {{/each}}">

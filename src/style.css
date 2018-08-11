@@ -293,6 +293,7 @@ li.follow-us__socials--github {
 
 .events__grid {
     display: grid;
+    position: relative;
     height: 100%;
     /* grid-auto-flow: dense; */
     grid-template-columns: 332px 332px 332px;
@@ -302,6 +303,30 @@ li.follow-us__socials--github {
     width: 996px;
     margin: 0 auto;
     margin-bottom: 5rem;
+    z-index: 1;
+}
+
+.events__grid--placeholders {
+    left: 0;
+    right: 0;
+    position: absolute;
+    z-index: 0;
+}
+
+.events__grid--placeholders > div {
+    position: relative;
+    background: rgba(243, 224, 72, 0.5);
+}
+
+.events__grid--placeholders > div:before {
+    content: "JS";
+    position: absolute;
+    bottom: -20px;
+    right: -40px;
+    font-size: 18rem;
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.7);
+    transform: rotate(-45deg);
 }
 
 .events_title {

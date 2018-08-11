@@ -6,7 +6,7 @@
     "main": "index",
     "scripts": {
         "start": "node index",
-        "precommit": "node ./node_modules/.bin/gulp handlebar",
+        "handlebar": "node ./node_modules/.bin/gulp handlebar",
         "test": "grunt validate --verbose"
     },
     "dependencies": {},
