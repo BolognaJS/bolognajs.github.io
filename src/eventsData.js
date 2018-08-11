@@ -65,7 +65,7 @@ module.exports = {
         },
         {
             "date": "21 marzo 2018",
-            "type": [["double"]],
+            "type": ["double"],
             "talks": [
                 {
                     "title": "Vue.js, un'alternativa dinamica a JQuery",
@@ -92,6 +92,7 @@ module.exports = {
         },
         {
             "date": "24 Gennaio 2018",
+            "type": ["double"],
             "talks": [
                 {
                     "title": "ES2015 class: Oltre lo zucchero sintattico.",

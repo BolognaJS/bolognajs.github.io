@@ -294,7 +294,7 @@ li.follow-us__socials--github {
 .events__grid {
     display: grid;
     height: 100%;
-    grid-auto-flow: dense;
+    /* grid-auto-flow: dense; */
     grid-template-columns: 332px 332px 332px;
     grid-auto-rows: 332px;
     grid-gap: 1px 1px;
