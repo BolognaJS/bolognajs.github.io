@@ -50,7 +50,7 @@ module.exports = {
                 },
                 {
                     "title": "Css Love JS",
-                    "speakers": ["Vincenzo Innocenti Sedili"]
+                    "speakers": ["Valerio Innocenti Sedili"]
                 }
             ]
         },
@@ -135,7 +135,7 @@ module.exports = {
                 },
                 {
                     "title": "Create objects in JavaScript",
-                    "speakers": ["Vincenzo Innocenti Sedili"]
+                    "speakers": ["Valerio Innocenti Sedili"]
                 }
             ]
         },

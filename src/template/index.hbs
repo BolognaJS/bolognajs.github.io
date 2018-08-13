@@ -84,6 +84,9 @@
                 <h2 class="events_title">I nostri eventi</h2>
                 <div class="events__grid events__grid--placeholders">
                     {{#each events}}
+                        {{#equalTo this.type "double"}}
+                        <div class="events__event" aria-hidden="true"></div>
+                        {{/equalTo}}
                         <div class="events__event" aria-hidden="true"></div>
                     {{/each}}
                 </div>

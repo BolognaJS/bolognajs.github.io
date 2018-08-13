@@ -1,5 +1,12 @@
 module.exports = {
     helpers: {
+        'equalTo' : function (arr, string, options) {
+            'use strict';
+            if (arr && arr.includes(string)) {
+                return options.fn(this);
+            }
+            return options.inverse(this);
+        },
         'greaterThan': function (v1, v2, options) {
             'use strict';
             if (v1 > v2) {
