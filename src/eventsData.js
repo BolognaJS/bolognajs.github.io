@@ -5,6 +5,9 @@
  * @type placeholder
  * @description when there isn't planned any event and you want to type a placeholder cell
  * 
+ * @type double
+ * @description when an event need to fill 2 cell of the grid
+ *
  * @type hands-on
  * @todo
  */

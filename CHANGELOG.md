@@ -11,6 +11,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - File Stucture
+- Templating from flexbox to css grids
 
 ### Fixed
-- Mansonry empty cell with css grids
+- empty cell with a placeholder
