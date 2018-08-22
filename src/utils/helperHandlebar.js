@@ -14,6 +14,26 @@ module.exports = {
             }
             return options.inverse(this);
         },
+        'roundUpCells': function (object, numElementsRow=0, block) {
+            const size = object.length % numElementsRow
+            const isNotOdd = size > 0 ? 1 : 0;
+            const total = ((object.length - size) / numElementsRow + isNotOdd) * numElementsRow
+            console.log(total)
+            let accum = '';
+
+            for(let i = 0; i < total; ++i) {
+                if(object[i] && object[i].type && object[i].type.includes("double"))
+                    accum += block.fn(i);
+                accum += block.fn(i);
+            }
+            return accum;
+        },
+        'times': function(n, block) {
+            var accum = '';
+            for(var i = 0; i < n; ++i)
+                accum += block.fn(i);
+            return accum;
+        },
         'isLinkable': function (name, options) {
             'use strict';
             const regex = new RegExp(/(.*)\[(.*)\]/);

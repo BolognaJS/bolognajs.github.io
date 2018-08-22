@@ -83,12 +83,12 @@
 
                 <h2 class="events_title">I nostri eventi</h2>
                 <div class="events__grid events__grid--placeholders">
-                    {{#each events}}
+                    {{#roundUpCells events 3}}
                         {{#equalTo this.type "double"}}
                         <div class="events__event" aria-hidden="true"></div>
                         {{/equalTo}}
                         <div class="events__event" aria-hidden="true"></div>
-                    {{/each}}
+                    {{/roundUpCells}}
                 </div>
                 <div class="events__grid">
                     {{#each events}}
