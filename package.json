@@ -7,12 +7,14 @@
     "scripts": {
         "start": "node index",
         "handlebar": "node ./node_modules/.bin/gulp handlebar",
+        "addevent": "node ./node_modules/.bin/gulp addevent && npm run handlebar",
         "test": "grunt validate --verbose"
     },
     "dependencies": {},
     "devDependencies": {
         "gulp": "^3.9.1",
         "gulp-compile-handlebars": "^0.6.1",
-        "gulp-rename": "^1.4.0"
+        "gulp-rename": "^1.4.0",
+        "inquirer": "^6.1.0"
     }
 }

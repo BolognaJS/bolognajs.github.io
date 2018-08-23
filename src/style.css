@@ -379,6 +379,26 @@ li.follow-us__socials--github {
     text-decoration: underline;
 }
 
+.events__event-author__speaker {
+    position: relative;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+.events__event-author__speaker:before {
+    content: ",";
+    position: absolute;
+    right: -8px;
+}
+
+.events__event-author__speaker:last-child {
+    margin-right: 0;
+}
+
+.events__event-author__speaker:last-child:before {
+    content: initial;
+}
+
 .events__content {
     flex-grow: 1;
     display: flex;

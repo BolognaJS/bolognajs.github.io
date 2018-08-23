@@ -98,10 +98,10 @@
                                         <span class="events__event-author">by
                                             {{#each this.speakers}}
                                                 {{#isLinkable this}}
-                                                    <a class="events__event-author" href="{{this.link}}">{{this.name}} </a>
+                                                    <a class="events__event-author__speaker events__event-author__speaker--link" href="{{this.link}}">{{this.name}}</a>
                                                 {{/isLinkable}}
                                                 {{#isNotLinkable this}}
-                                                        <span class="events__event-author">{{this}} </span>
+                                                    <span class="events__event-author__speaker">{{this}}</span>
                                                 {{/isNotLinkable}}
                                             {{/each}}
                                         </span>
