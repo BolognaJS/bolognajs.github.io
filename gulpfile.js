@@ -18,6 +18,7 @@ gulp.task('handlebar', function() {
 gulp.task('addevent', function() {
     const rfdata = fs.readFileSync('./src/eventsData.json', "utf-8");
     let eventsData = JSON.parse(rfdata);
+    const eventType = eventsData["events"][0].type;
 
     var p = createEvent.init().then(final => {
         final.talks = final.talks.map(el => ({
@@ -25,12 +26,17 @@ gulp.task('addevent', function() {
             speakers: el.speakers.split(";")
         }));
         
-        if (eventsData["events"][0].type && eventsData["events"][0].type.includes("placeholder")) {
+        if (eventType && eventType.includes("placeholder")) {
             eventsData["events"][0] = final;
         } else {
             eventsData["events"] = [final, ...eventsData["events"]];
         }
-        fs.writeFileSync('./src/eventsData.json', "utf-8");
+
+        if (eventType && eventType.includes("next")) {
+            eventType.splice(eventType.indexOf("next"))
+        }
+
+        fs.writeFileSync('./src/eventsData.json', JSON.stringify(eventsData, null, '\t') ,"utf-8");
         return 1
     });
     return p;

@@ -35,3 +35,5 @@ Inserire gli speaker del talk nel caso dovessero essere piu di uno separarli dal
 Per inserire il link al profilo twitter dello speaker aggiungere fra `[]`il link
 
 es. `"Giorgio Aquino[https://twitter.com/g100g];Davide Fiorello"`
+
+**NB** : I placeholder e il next sono gestiti dal task ovvero se c'è una cella placeholder all'aggiunta di un nuovo evento o un nuovo placeholder quello vecchio viene rimosso, il `type: next` viene rimosso dalle proprietà della cella se viene aggiunto un evento nuovo
