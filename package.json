@@ -1,11 +1,13 @@
 {
-    "name": "bolognajs-website",
-    "version": "2.0.0",
-    "description": "Comunity Javascript di Bologna.",
-    "author": "the Bologna JS web team",
-    "main": "./core/index",
-    "scripts": {
-        "start": "node index",
-        "test": "grunt validate --verbose"
-    }
+  "name": "bolognajs-website",
+  "version": "2.0.0",
+  "description": "Comunity Javascript di Bologna.",
+  "author": "the Bologna JS web team",
+  "main": "./core/index",
+  "scripts": {
+    "start": "ws"
+  },
+  "devDependencies": {
+    "local-web-server": "^2.6.1"
+  }
 }
