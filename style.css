@@ -368,6 +368,8 @@ footer a {
 }
 
 .supported-by ul {
+    display: flex;
+    align-items: center;
     margin: 0;
     padding: 0;
 }
@@ -403,6 +405,11 @@ li.supported-by--jetbrains {
     background-image: url(img/jetbrains-logo.svg);
     /* width: 60px;
     height: 60px; */
+}
+
+li.supported-by--grusp {
+    background-image: url(img/grusp-logo.svg);
+    height: 85px;
 }
 
 @media screen and (max-width: 1023px) {
