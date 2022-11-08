@@ -43,6 +43,30 @@
           Siamo una community molto numerosa e molto attiva sul canale Slack
           composta da professionisti e studenti
         </p>
+
+        <button class="btn-toggle-theme">
+          <span class="text">toggle theme</span>
+          <span aria-hidden="true"
+            ><svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8V16Z"
+                fill="currentColor"
+              />
+              <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2ZM12 4V8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16V20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+        </button>
       </header>
       <main>
         <div class="follow-us">
@@ -405,7 +429,7 @@
       </main>
       <footer>
         <div class="footer-follow-us">
-          seguici su
+          seguici su<br />
           <a href="http://bolognajs.herokuapp.com/">Slack</a>
           <a href="https://www.meetup.com/it-IT/Bologna-JS-Meetup/">MeetUp</a>
           <a href="https://twitter.com/bolognajs">Twitter</a>
@@ -447,5 +471,6 @@
         </div>
       </footer>
     </div>
+    <script type="module" src="./scripts/themeselector.mjs"></script>
   </body>
 </html>
