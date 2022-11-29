@@ -1,5 +1,13 @@
 :root {
     --main-color: #f3df49;
+    --text-color: #000;
+    --bkg-color: #fff;
+}
+
+body.dark-theme {
+    --main-color: #f3df49;
+    --text-color: #fff;
+    --bkg-color: #111;
 }
 
 /**
@@ -162,16 +170,21 @@ html {
 body {
     margin: 0;
     padding: 0;
-    background: #fff;
+    color: var(--text-color);
+    background: var(--bkg-color);
 }
 
 a {
-    color: black;
+    color: var(--text-color);
     text-decoration: none;
 }
 
 a:hover {
     color: #333;
+}
+
+.dark-theme a:hover {
+    color: var(--main-color);
 }
 
 /**
@@ -190,12 +203,22 @@ header {
     margin-bottom: 5rem;
 }
 
+.dark-theme header {
+    background-color: #000;
+}
+
 .header__title {
     width: 179px;
     height: 179px;
 
     background: url(img/header-logo.svg) no-repeat center center;
     background-size: contain;
+}
+
+.dark-theme .header__title {
+    background: var(--main-color);
+    -webkit-mask: url(img/header-logo.svg) no-repeat center;
+    mask: url(img/header-logo.svg) no-repeat center;
 }
 
 .header__intro {
@@ -310,10 +333,14 @@ li.follow-us__socials--youtube {
     display: inline-block;
     font-size: 4rem;
     padding: 0.1rem 1rem;
+    padding-bottom: 0.6rem;
+    color: #000;
     background-color: var(--main-color);
 }
 
 .events__event {
+    --bkg-color: #f7f7f7;
+    --text-color: #000;
     justify-content: space-around;
     display: flex;
     flex-direction: column;
@@ -323,7 +350,13 @@ li.follow-us__socials--youtube {
     text-align: left;
     padding: 2rem;
     margin: 10px;
-    background: #f7f7f7;
+    color: var(--text-color);
+    background: var(--bkg-color);
+}
+
+.dark-theme .events__event {
+    --bkg-color: #000;
+    --text-color: #f7f7f7;
 }
 
 .events__event h3 {
@@ -355,10 +388,20 @@ li.follow-us__socials--youtube {
 }
 
 .footer-follow-us {
-    background-color: #ebebeb;
+    --bkg-color: #ebebeb;
+    color: --text-color;
+    background-color: var(--bkg-color);
     font-size: 2rem;
     text-align: center;
     padding: 2rem 1rem;
+}
+
+.footer-follow-us br {
+    display: none;
+}
+
+.dark-theme .footer-follow-us {
+    --bkg-color: #000;
 }
 
 footer a {
@@ -371,6 +414,12 @@ footer a {
     justify-content: center;
     padding: 2rem 0;
     text-align: center;
+    color: var(--text-color);
+}
+
+.dark-theme .supported-by {
+    --text-color: var(--bkg-color);
+    background-color: var(--main-color);
 }
 
 .supported-by ul {
@@ -418,6 +467,20 @@ li.supported-by--grusp {
     height: 85px;
 }
 
+.btn-toggle-theme {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-color);
+    opacity: .4;
+}
+.btn-toggle-theme .text {
+    display: none;
+}
+
 @media screen and (max-width: 1023px) {
     .events__grid {
         width: 664px;
@@ -461,6 +524,10 @@ li.supported-by--grusp {
     }
 
     .supported-by {
+        display: block;
+    }
+
+    .footer-follow-us br {
         display: block;
     }
 }
