@@ -275,6 +275,12 @@ li.follow-us__socials--github {
     height: 60px;
 }
 
+li.follow-us__socials--youtube {
+    background-image: url(img/social-youtube.svg);
+    width: 60px;
+    height: 60px;
+}
+
 /**
     Events
 **/
@@ -396,9 +402,9 @@ footer a {
     height: 100%;
 }
 
-li.supported-by--luogocomune {
-    background-image: url(img/luogocomune-logo.png);
-    width: 130px;
+li.supported-by--spazio01 {
+    background-image: url(img/spazio01.png);
+    width: 190px;
 }
 
 li.supported-by--jetbrains {
