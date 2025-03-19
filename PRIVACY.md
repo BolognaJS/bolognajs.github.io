@@ -8,18 +8,15 @@ Each of the items listed in this document can be disabled via Ghost's `config.js
 
 Some official services for Ghost are enabled by default. These services connect to Ghost.org and are managed by the Ghost Foundation: the Non-Profit organisation which runs the Ghost project.
 
-
 ### Automatic Update Checks
 
 When a new session is started, Ghost pings a Ghost.org endpoint to check if the current version of Ghost is the latest version of Ghost. If an update is available, a notification appears inside Ghost to let you know. Ghost.org collects basic anonymised usage statistics from update check requests.
 
 This service can be disabled at any time. All of the information and code related to this service is available in the [update-check.js](https://github.com/TryGhost/Ghost/blob/master/core/server/update-check.js) file.
 
-
 ## Third Party Services
 
 Ghost uses a number of third party services for specific functionality within Ghost.
-
 
 ### Google Fonts
 
