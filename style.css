@@ -362,10 +362,12 @@ li.follow-us__socials--youtube {
   margin: 0;
   /* padding: 0; */
   flex-grow: 1;
+  font-size: 2rem;
 }
 
 .events__event-date {
   margin-bottom: 1rem;
+  color: #f3df49;
 }
 
 .events__event--next {
@@ -517,6 +519,10 @@ li.supported-by--grusp {
   .events__grid {
     width: 100%;
     padding: 0 10px;
+  }
+
+  .events__event-author {
+    font-size: 1.5rem;
   }
 
   .events__event {
