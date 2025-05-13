@@ -360,9 +360,7 @@ li.follow-us__socials--youtube {
 
 .events__event-date {
   margin-bottom: 1rem;
-  color: var(--main-color);
-  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8),
-    2px 2px 10px rgba(249, 228, 76, 0.9), 2px 2px 10px rgba(249, 228, 76, 0.9);
+  color: var(--text-color);
 }
 
 .events__event--next {
@@ -374,6 +372,10 @@ li.follow-us__socials--youtube {
   background-size: 80%;
   width: 644px;
   justify-content: space-evenly;
+}
+
+.events__event--next .events__event-date {
+  color: var(--main-color);
 }
 
 .events__event--double {
