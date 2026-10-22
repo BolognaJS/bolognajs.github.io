@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lotteria Bologna JS</title>
+    <meta
+      name="description"
+      content="La lotteria di Bologna JS: incolla o detta i nomi, gira la ruota colorata ed estrai i vincitori. Tutto in JavaScript vanilla, tutto nel tuo browser."
+    />
+    <meta name="theme-color" content="#0a0a09" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-screen="setup">
+    <div class="backdrop" aria-hidden="true"></div>
+
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="Bologna JS — home">
+        <span class="brand__mark" aria-hidden="true"></span>
+        <span class="brand__name"
+          >Bologna<span class="brand__dot">.</span>JS</span
+        >
+      </a>
+
+      <div class="site-header__actions">
+        <button
+          id="soundToggle"
+          class="chip-btn"
+          type="button"
+          aria-pressed="true"
+          title="Attiva o disattiva i suoni"
+        >
+          <span class="chip-btn__icon" aria-hidden="true">♪</span>
+          <span id="soundLabel">Suono ON</span>
+        </button>
+        <button id="openRecap" class="chip-btn chip-btn--recap" type="button">
+          <span aria-hidden="true">🏆</span> Recap
+          <span id="recapCount" class="badge">0</span>
+        </button>
+      </div>
+    </header>
+
+    <main class="main">
+      <!-- ============ SETUP ============ -->
+      <section
+        id="screenSetup"
+        class="screen screen--setup"
+        aria-labelledby="setupTitle"
+      >
+        <div class="setup">
+          <div class="setup__intro">
+            <p class="eyebrow">// estrazione ufficiale · js vanilla</p>
+            <h1 id="setupTitle" class="display">
+              La <span class="hl-yellow">lotteria</span><br />
+              di Bologna&nbsp;<span class="hl-red">JS</span>
+            </h1>
+            <p class="lede">
+              Incolla i nomi dei partecipanti — uno per riga — oppure dettali
+              col microfono. Gira la ruota, incorona i vincitori e porta a casa
+              il recap pronto da incollare in chat.
+            </p>
+
+            <ol class="steps">
+              <li>
+                <span class="steps__n">01</span> Aggiungi i nomi a mano o a voce
+              </li>
+              <li>
+                <span class="steps__n">02</span> Gira la ruota, un vincitore
+                alla volta
+              </li>
+              <li>
+                <span class="steps__n">03</span> Copia il recap e mandalo su
+                Slack
+              </li>
+            </ol>
+          </div>
+
+          <form id="namesForm" class="card setup__form" novalidate>
+            <div class="field-head">
+              <label for="namesInput">Partecipanti</label>
+              <span id="nameCount" class="pill">0 nomi</span>
+            </div>
+
+            <textarea
+              id="namesInput"
+              name="names"
+              rows="9"
+              spellcheck="false"
+              autocomplete="off"
+              placeholder="Ada Lovelace&#10;Alan Turing&#10;Grace Hopper&#10;…"
+            ></textarea>
+
+            <div class="mic-row">
+              <button
+                id="micBtn"
+                class="mic-btn"
+                type="button"
+                aria-pressed="false"
+                title="Detta i nomi con il microfono"
+              >
+                <span class="mic-btn__dot" aria-hidden="true"></span>
+                <span id="micLabel">Detta i nomi</span>
+              </button>
+              <p
+                id="micStatus"
+                class="mic-status"
+                role="status"
+                aria-live="polite"
+              >
+                Microfono pronto.
+              </p>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn--primary">
+                Prepara la ruota →
+              </button>
+              <button type="button" id="demoBtn" class="btn btn--ghost">
+                Nomi demo
+              </button>
+            </div>
+
+            <p class="hint">
+              Almeno 2 partecipanti · i doppioni vengono contati una volta sola
+              · i nomi restano solo sul tuo dispositivo
+            </p>
+          </form>
+        </div>
+      </section>
+
+      <!-- ============ WHEEL ============ -->
+      <section
+        id="screenWheel"
+        class="screen screen--wheel"
+        aria-labelledby="wheelTitle"
+        hidden
+      >
+        <div class="stage">
+          <div class="stage__main">
+            <div class="stage__head">
+              <h2 id="wheelTitle" class="stage__title">Gira la ruota</h2>
+              <p id="poolMeta" class="stage__meta">0 in gara · 0 estratti</p>
+            </div>
+
+            <div class="wheel-wrap">
+              <canvas
+                id="wheel"
+                width="900"
+                height="900"
+                aria-label="Ruota della lotteria"
+              >
+                La tua ruota della lotteria.
+              </canvas>
+              <div class="pointer" aria-hidden="true"></div>
+            </div>
+
+            <div
+              id="resultBanner"
+              class="result-banner"
+              hidden
+              aria-live="polite"
+            >
+              <span class="result-banner__kicker">Ha vinto</span>
+              <strong id="resultName" class="result-banner__name">—</strong>
+            </div>
+
+            <div class="stage__controls">
+              <button id="spinBtn" class="btn btn--spin" type="button">
+                Gira la ruota
+              </button>
+              <button id="editBtn" class="btn btn--ghost btn--sm" type="button">
+                Modifica nomi
+              </button>
+            </div>
+            <p class="stage__hint">Premi <kbd>spazio</kbd> per girare</p>
+          </div>
+
+          <aside class="panel" aria-labelledby="winnersTitle">
+            <div class="panel__head">
+              <h3 id="winnersTitle" class="panel__title">Vincitori</h3>
+              <span id="winnersCount" class="pill pill--yellow">0</span>
+            </div>
+
+            <div class="panel__scroll">
+              <ol id="winnersList" class="winners"></ol>
+              <div id="winnersEmpty" class="panel__empty">
+                <span class="panel__empty-icon" aria-hidden="true">🏆</span>
+                <p>Ancora nessun vincitore.<br />La ruota aspetta solo te.</p>
+              </div>
+            </div>
+
+            <div class="panel__actions">
+              <button
+                id="copyWinners"
+                class="btn btn--primary btn--sm"
+                type="button"
+              >
+                Copia per la chat
+              </button>
+              <button
+                id="clearWinners"
+                class="btn btn--ghost btn--sm"
+                type="button"
+              >
+                Azzera
+              </button>
+            </div>
+
+            <label class="switch">
+              <input id="removeToggle" type="checkbox" checked />
+              <span class="switch__track" aria-hidden="true"
+                ><span class="switch__thumb"></span
+              ></span>
+              <span class="switch__label">Togli i vincitori dall'urna</span>
+            </label>
+
+            <p class="panel__foot">
+              Recap salvato in locale su questo browser. Copialo prima di
+              cambiare dispositivo.
+            </p>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Bologna JS · lotteria in JS vanilla</span>
+      <a href="https://www.bolognajs.com/" target="_blank" rel="noreferrer"
+        >bolognajs.com ↗</a
+      >
+    </footer>
+
+    <!-- ============ RECAP DIALOG ============ -->
+    <dialog id="recapDialog" class="recap" aria-labelledby="recapTitle">
+      <header class="recap__head">
+        <div>
+          <p class="eyebrow">// recap persistente</p>
+          <h2 id="recapTitle" class="recap__title">Vincitori estratti</h2>
+        </div>
+        <button
+          class="icon-btn"
+          type="button"
+          data-close-recap
+          aria-label="Chiudi recap"
+        >
+          ✕
+        </button>
+      </header>
+
+      <div class="recap__body">
+        <ol id="recapList" class="winners winners--wide"></ol>
+        <p id="recapEmpty" class="recap__empty">
+          Nessun nome salvato. Gira la ruota per riempire il recap.
+        </p>
+      </div>
+
+      <footer class="recap__foot">
+        <button id="recapCopy" class="btn btn--primary btn--sm" type="button">
+          Copia nomi
+        </button>
+        <button id="recapClear" class="btn btn--ghost btn--sm" type="button">
+          Azzera recap
+        </button>
+        <button class="btn btn--ghost btn--sm" type="button" data-close-recap>
+          Chiudi
+        </button>
+      </footer>
+    </dialog>
+
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+    <canvas id="confetti" class="confetti" aria-hidden="true"></canvas>
+
+    <script src="app.js"></script>
+  </body>
+</html>
