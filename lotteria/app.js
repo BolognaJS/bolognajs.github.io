@@ -672,52 +672,81 @@
     }
   
     /* ------------------------------------------------------------------ */
-    /* suspense: frenata regolare e poi stutter irregolare                */
+    /* suspense: frenata lunga e poi colpo di coda imprevedibile          */
     /* ------------------------------------------------------------------ */
-  
+
+    function meanOf(fn, samples) {
+      let sum = 0;
+      for (let i = 0; i < samples; i += 1) sum += fn((i + 0.5) / samples);
+      return sum / samples;
+    }
+
     /**
-     * Frenata regolare con qualche "respiro": la velocità sale e scende un po'
-     * (mai fino a fermarsi, mai all'indietro) e la curva atterra esatta sulla
-     * fetta vincente. La curva è l'integrale di una velocità sempre positiva,
-     * quindi è monotona per costruzione.
+     * Due fasi, entrambe definite come velocità sempre positiva (niente
+     * marce indietro) e integrate in una tabella di posizioni:
+     *
+     * 1. frenata lunga con qualche "respiro", che porta la ruota a strisciare
+     *    lentamente: a quel punto sembra chiaro dove si fermerà;
+     * 2. negli ultimi 1,3-2 secondi la ruota riprende un po' di slancio e
+     *    supera di qualche fetta il punto in cui una frenata normale l'avrebbe
+     *    fermata, poi si ferma dolcemente sul vincitore.
+     *
+     * La curva atterra esatta su `delta`, cioè sulla fetta vincente.
      */
-    function buildSpinCurve(delta, duration) {
-      const steps = 480;
-      const decay = 1.5 + Math.random() * 0.2;
+    function buildSpinCurve(delta, arc) {
+      const brakeMs = 7200 + Math.random() * 900;
+      const kickMs = 1300 + Math.random() * 700;
+      const duration = brakeMs + kickMs;
+
+      /* velocità di "strisciata" a fine frenata, in rad/ms; il tetto evita
+         che con pochi nomi (fette enormi) la ruota strisci troppo veloce */
+      const crawl = Math.min(arc * (1.1 + Math.random() * 0.5), TAU * 0.12) / 1000;
+      /* fette in più rispetto alla frenata naturale */
+      const extra = Math.min(arc * (1.6 + Math.random() * 1.6), TAU * 0.4);
+
+      const decay = 2 + Math.random() * 0.3;
       const cycles = 2 + Math.random() * 0.6;
-      const amp = 0.42 + Math.random() * 0.1;
-      /* il "respiro" ha il suo picco verso il 60-66% del giro e il minimo
-         più avanti: così la ruota riprende un po' prima di fermarsi */
+      const amp = 0.3 + Math.random() * 0.1;
       const crest = 0.6 + Math.random() * 0.06;
       const phase = Math.PI / 2 - TAU * cycles * crest;
-  
-      const weights = [];
-      let total = 0;
-      for (let i = 0; i < steps; i += 1) {
-        const p = i / steps;
-        const breather = 1 + amp * Math.sin(TAU * cycles * p + phase);
-        /* il piccolo fondo evita che la ruota si pianti prima del verdetto */
-        const weight = Math.pow(1 - p, decay) * breather + 0.008;
-        weights.push(weight);
-        total += weight;
+      const brakeShape = (p) =>
+        Math.pow(1 - p, decay) * (1 + amp * Math.sin(TAU * cycles * p + phase));
+
+      /* lo slancio ha il picco a circa un terzo della fase finale */
+      const skew = 0.6 + Math.random() * 0.2;
+      const kickShape = (q) => Math.pow(Math.sin(Math.PI * Math.pow(q, skew)), 2);
+
+      /* distanza che una frenata naturale da `crawl` a zero coprirebbe */
+      const coast = (crawl * kickMs) / 3;
+      const brakeDist = delta - coast - extra;
+      const brakeAmp = (brakeDist / brakeMs - crawl) / meanOf(brakeShape, 400);
+      const kickAmp = extra / (kickMs * meanOf(kickShape, 400));
+
+      function velocity(ms) {
+        if (ms < brakeMs) return crawl + brakeAmp * brakeShape(ms / brakeMs);
+        const q = (ms - brakeMs) / kickMs;
+        return crawl * (1 - q) * (1 - q) + kickAmp * kickShape(q);
       }
-  
+
+      const steps = 900;
+      const dt = duration / steps;
       const progress = new Array(steps + 1);
       progress[0] = 0;
-      let acc = 0;
       for (let i = 0; i < steps; i += 1) {
-        acc += weights[i];
-        progress[i + 1] = acc / total;
+        progress[i + 1] = progress[i] + velocity((i + 0.5) * dt) * dt;
       }
-  
-      return function rotationAt(elapsed) {
+      const scale = delta / progress[steps];
+
+      function rotationAt(elapsed) {
         if (elapsed >= duration) return delta;
         if (elapsed <= 0) return 0;
-        const x = (elapsed / duration) * steps;
+        const x = elapsed / dt;
         const i = Math.min(steps - 1, Math.floor(x));
         const frac = x - i;
-        return delta * (progress[i] + (progress[i + 1] - progress[i]) * frac);
-      };
+        return scale * (progress[i] + (progress[i + 1] - progress[i]) * frac);
+      }
+
+      return { duration, rotationAt };
     }
   
     function spin() {
@@ -749,9 +778,9 @@
       const turns = REDUCED ? 1 : 5 + randomInt(3);
       delta += turns * TAU;
   
-      const duration = REDUCED ? 1400 : 6200 + Math.random() * 700;
+      const curve = REDUCED ? null : buildSpinCurve(delta, arc);
+      const duration = curve ? curve.duration : 1400;
       const startTime = performance.now();
-      const curve = REDUCED ? null : buildSpinCurve(delta, duration);
       let lastSlice = -1;
       let lastTick = 0;
   
@@ -761,7 +790,7 @@
         const elapsed = now - startTime;
         const t = clamp(elapsed / duration, 0, 1);
         const rotated = curve
-          ? curve(elapsed)
+          ? curve.rotationAt(elapsed)
           : delta * (1 - Math.pow(1 - t, 3));
         wheel.rotation = startRotation + rotated;
   

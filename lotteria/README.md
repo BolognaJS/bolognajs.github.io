@@ -6,7 +6,7 @@ Ruota della lotteria a tema Bologna JS, 100% front-end e JavaScript vanilla (nes
 
 - **Setup**: incolla i nomi (uno per riga) o dettali col microfono (Web Speech API, italiano). I doppioni vengono contati una volta sola.
 - **Ruota**: estrazione con `crypto.getRandomValues`, spicchi in palette pastello, tick sonoro e jingle sintetizzato in stile gioco a premi (nessun file audio protetto: le note sono generate con la Web Audio API). Con meno di 12 nomi gli spicchi vengono moltiplicati ripetendo i nomi, così la ruota resta fitta e colorata: ogni nome ha lo stesso numero di spicchi, quindi le probabilità non cambiano.
-- **Suspense**: la ruota frena con un'andatura che respira — ogni tanto riprende un po' e poi rallenta di nuovo, senza fermate secche né marce indietro — e atterra esattamente sulla fetta vincente.
+- **Suspense**: la ruota frena a lungo con un'andatura che respira, fino a strisciare come se stesse per fermarsi; negli ultimi 1-2 secondi riprende slancio e avanza di un paio di fette oltre il punto "previsto", senza fermate secche né marce indietro, e atterra esattamente sulla fetta vincente.
 - **Vincitori**: ogni estrazione finisce in un recap persistente in `localStorage`; il pulsante "Copia per la chat" produce una lista numerata pronta per Slack/WhatsApp/ecc.
 - **Opzioni**: suono on/off, rimozione automatica dei vincitori dall'urna, azzeramento del recap, possibilità di eliminare un singolo vincitore.
 
